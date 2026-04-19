@@ -127,7 +127,7 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
   .eyebrow::before {
     content: "";
@@ -146,7 +146,7 @@
     font-weight: 700; font-size: 11px;
     letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--surface-dark);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
   .eyebrow-split::before {
     content: ""; width: 40px; height: 1px; background: var(--accent);
@@ -156,7 +156,7 @@
   .h1 {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: clamp(40px, 5.8vw, 72px);
+    font-size: clamp(40px, 5.8vw, 76px);
     line-height: 1.02;
     letter-spacing: -0.025em;
     color: #fff;
@@ -165,8 +165,8 @@
   .h2 {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: clamp(32px, 4.2vw, 52px);
-    line-height: 1.08;
+    font-size: clamp(32px, 4.4vw, 56px);
+    line-height: 1.06;
     letter-spacing: -0.02em;
     text-wrap: balance;
   }
@@ -174,8 +174,8 @@
   .h2 .accent-word, .h2.on-light-accent .accent-word {
     /* On light: underline with yellow because yellow-on-white text fails contrast */
     color: var(--surface-dark);
-    border-bottom: 4px solid var(--accent);
-    padding-bottom: 2px;
+    border-bottom: 0.08em solid var(--accent);
+    padding-bottom: 0.04em;
   }
   .sec-dark .h2 .accent-word {
     color: var(--accent);
@@ -188,15 +188,15 @@
     font-weight: 300;
     font-size: clamp(18px, 1.6vw, 22px);
     color: rgba(255,255,255,0.5);
-    letter-spacing: 0.02em;
-    line-height: 1.5;
+    letter-spacing: -0.005em;
+    line-height: 1.45;
     max-width: 52ch;
   }
 
   .lede, .body-stack p {
     font-family: var(--font-sans);
-    font-size: clamp(16px, 1.2vw, 18px);
-    line-height: 1.8;
+    font-size: clamp(17px, 1.2vw, 18px);
+    line-height: 1.7;
     color: var(--body);
     max-width: 62ch;
   }
@@ -206,14 +206,15 @@
   .sec-dark .body-stack strong { color: #fff; }
 
   .pull-quote {
-    margin: 40px 0;
-    padding: 24px 8px 24px 28px;
+    margin: 48px 0;
+    padding: 24px 8px 24px 32px;
     border-left: 2px solid var(--accent);
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: clamp(20px, 2.1vw, 26px);
-    line-height: 1.5;
-    max-width: 62ch;
+    font-size: clamp(22px, 2.4vw, 30px);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    max-width: 60ch;
     color: inherit;
   }
   .sec-dark .pull-quote { color: rgba(255,255,255,0.92); }
@@ -262,7 +263,7 @@
     display: block;
     margin-top: 18px;
     font-size: 11px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     font-family: var(--font-sans);
     font-weight: 500;
@@ -350,7 +351,7 @@
   }
 
   .hero-body {
-    margin-top: 40px;
+    margin-top: 36px;
     font-size: 17px;
     line-height: 1.7;
     color: rgba(255,255,255,0.72);
@@ -359,9 +360,9 @@
   .hero-body p + p { margin-top: 18px; }
   .hero-body strong { color: #fff; font-weight: 600; }
 
-  .hero-cta-wrap { margin-top: 40px; }
+  .hero-cta-wrap { margin-top: 44px; }
   .hero-sub-line {
-    margin-top: 32px;
+    margin-top: 28px;
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 15px;
@@ -392,11 +393,11 @@
   .qmark-watermark.invert svg { color: #fff; }
 
   /* ---------- Section head ---------- */
-  .section-head { margin-bottom: 56px; max-width: 820px; }
+  .section-head { margin-bottom: 48px; max-width: 820px; }
   .section-head .sub {
-    margin-top: 24px;
+    margin-top: 20px;
     font-size: 18px;
-    line-height: 1.65;
+    line-height: 1.6;
     color: var(--muted);
     max-width: 62ch;
   }
@@ -645,9 +646,9 @@
   .stat-item .n {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: clamp(32px, 3.8vw, 44px);
+    font-size: clamp(32px, 4.2vw, 52px);
     color: var(--accent);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     line-height: 1;
     display: block;
   }
@@ -1012,12 +1013,18 @@
   .display-strong {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 22px;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
+    font-size: clamp(20px, 1.8vw, 24px);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
     color: var(--surface-dark);
     display: block;
     margin-bottom: 4px;
+  }
+  /* Punchline variant — for emotional landings (sets max-width inline) */
+  .display-strong.punchline {
+    font-size: clamp(22px, 2.0vw, 28px);
+    line-height: 1.2;
+    letter-spacing: -0.018em;
   }
   .sec-dark .display-strong { color: #fff; }
 
@@ -1380,7 +1387,7 @@
       </div>
 
       <p class="hero-sub-line">
-        <em>Nick Gowens signed a new client within his first few calls. Sanjiv Dodia saw ROI in under 90 days.</em>
+        <em>Nick Gowens signed a new client within his first few calls. Sanjiv Dodhia saw ROI in under 90 days.</em>
       </p>
     </div>
   </div>
@@ -1400,10 +1407,13 @@
 
     <div class="testi-grid">
       <article class="testi-card">
-        <div class="brand-strip"><img src="assets/ac-logo.webp" alt="ActionCOACH" style="height:28px; width:auto; filter: brightness(0) invert(1); opacity:0.85;" /></div>
+        <div class="brand-strip" style="gap:10px;">
+          <img src="assets/ac-logo.webp" alt="ActionCOACH" style="height:28px; width:auto; filter: brightness(0) invert(1); opacity:0.85;" />
+          <span class="ac-mark" style="font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.28em; color: rgba(255,255,255,0.45); text-transform: uppercase;">· WATFORD</span>
+        </div>
         <div class="avatar-row">
           <img class="circle" src="assets/headshots/matt-donegan.jpeg" alt="Matt Donegan" style="object-fit:cover;" />
-          <span class="who"><span class="name">Matt Donegan</span><span class="title">Senior Partner at ActionCOACH</span></span>
+          <span class="who"><span class="name">Matt Donegan</span><span class="title">Senior Partner, ActionCOACH Watford</span></span>
         </div>
         <span class="quote-mark" aria-hidden="true">“</span>
         <blockquote>They always deliver on KPIs, even stretch goals. Proactive account management geared to improving performance. Dedicated SDR aligned to my business needs. Professional, flexible, and full of added value. What's not to recommend?</blockquote>
@@ -1427,11 +1437,11 @@
       <article class="testi-card no-stat">
         <div class="brand-strip" style="gap:10px;">
           <img src="assets/ac-logo.webp" alt="ActionCOACH" style="height:28px; width:auto; filter: brightness(0) invert(1); opacity:0.85;" />
-          <span class="ac-mark" style="font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.28em; color: rgba(255,255,255,0.45); text-transform: uppercase;">UK</span>
+          <span class="ac-mark" style="font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.28em; color: rgba(255,255,255,0.45); text-transform: uppercase;">· SURREY &amp; LONDON</span>
         </div>
         <div class="avatar-row">
           <img class="circle" src="assets/headshots/sanjiv-dodhia.jpeg" alt="Sanjiv Dodhia" style="object-fit:cover;" />
-          <span class="who"><span class="name">Sanjiv Dodia</span><span class="title">ActionCOACH UK</span></span>
+          <span class="who"><span class="name">Sanjiv Dodhia</span><span class="title">Franchise Partner, ActionCOACH — Surrey &amp; Greater London</span></span>
         </div>
         <span class="quote-mark" aria-hidden="true">“</span>
         <blockquote>ROI in under 90 days through case study based outreach. QCP helped me connect with local SMEs and turn those calls into paying clients.</blockquote>
@@ -1440,11 +1450,11 @@
       <article class="testi-card">
         <div class="brand-strip" style="gap:10px;">
           <img src="assets/ac-logo.webp" alt="ActionCOACH" style="height:28px; width:auto; filter: brightness(0) invert(1); opacity:0.85;" />
-          <span class="ac-mark" style="font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.28em; color: rgba(255,255,255,0.45); text-transform: uppercase;">· LONDON</span>
+          <span class="ac-mark" style="font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.28em; color: rgba(255,255,255,0.45); text-transform: uppercase;">· SOUTHWARK</span>
         </div>
         <div class="avatar-row">
           <img class="circle" src="assets/headshots/matt-whittingham.jpeg" alt="Matt Whittingham" style="object-fit:cover;" />
-          <span class="who"><span class="name">Matt Whittingham</span><span class="title">Senior Partner, ActionCOACH</span></span>
+          <span class="who"><span class="name">Matt Whittingham</span><span class="title">Senior Partner, ActionCOACH Southwark</span></span>
         </div>
         <span class="quote-mark" aria-hidden="true">“</span>
         <blockquote>Great team, who I've been working with for almost a year now. QCP have booked almost 100 conversations for me with leading business owners in London, right up to CEO level. Recommended.</blockquote>
@@ -1474,7 +1484,7 @@
       <p>You can't run a <strong>GrowthCLUB</strong> and follow up on 30 LinkedIn conversations in the same week. You can't deliver a <strong>COD call</strong> and simultaneously be reaching out to the next prospect. You can't maintain a multichannel outreach cadence while coaching 8 to 12 clients. The practice will only grow as fast as you can fill your diary. And right now, you're the one filling it.</p>
     </div>
 
-    <h3 class="display-strong" style="margin-top: 48px; font-size: 26px;">You've tried to fix this.</h3>
+    <h3 class="display-strong" style="margin-top: 48px;">You've tried to fix this.</h3>
 
     <div class="body-stack wide">
       <p>You hired a junior VA to run LinkedIn. They couldn't articulate what ActionCOACH actually does, let alone qualify a business owner for a COD call. The skill sets are worlds apart.</p>
@@ -1482,14 +1492,14 @@
       <p>You did it yourself between sessions. Burning hours on outreach that feels productive but generates nothing predictable. 10pm on a Tuesday, writing personalised messages to business owners who never reply.</p>
     </div>
 
-    <h3 class="display-strong" style="margin-top: 48px; font-size: 24px; max-width: 24ch;">The problem was never effort. It was that your practice was never designed to support what you're trying to build.</h3>
+    <h3 class="display-strong punchline" style="margin-top: 48px; max-width: 24ch;">The problem was never effort. It was that your practice was never designed to support what you're trying to build.</h3>
 
     <div class="body-stack wide" style="margin-top: 24px;">
       <p>Multichannel prospecting to CEOs and founders requires nurturing automations, CRM infrastructure, email deliverability architecture, LinkedIn tooling, telephony systems, and data enrichment pipelines. Even if you could build all of it, every hour you spend on outreach infrastructure is an hour stolen from the only thing generating revenue: coaching.</p>
       <p>The irony isn't lost on you. The advice you give your clients every day — delegate, build systems, stop wearing every hat — is the same advice that would fix your own practice. But the economics of a solo ActionCOACH territory make following that advice nearly impossible without the right partner.</p>
     </div>
 
-    <h3 class="display-strong" style="margin-top: 48px; font-size: 22px; max-width: 34ch;">The licensees building £10,000+ in monthly recurring revenue solved this problem exactly once. They separated the coaching from the client acquisition. They invested in a system that generates qualified COD calls without them.</h3>
+    <h3 class="display-strong punchline" style="margin-top: 48px; max-width: 34ch;">The licensees building £10,000+ in monthly recurring revenue solved this problem exactly once. They separated the coaching from the client acquisition. They invested in a system that generates qualified COD calls without them.</h3>
 
     <div style="margin-top: 56px;">
       <a href="#book" class="btn btn-dark">Show Me How This Works for My Territory →</a>
@@ -1538,7 +1548,7 @@
       <p>This is rejection on <em>premise</em>, not on price or timing. Cold outreach that leads with coaching gets filtered before the message is finished.</p>
     </div>
 
-    <h3 class="display-strong" style="margin-top: 48px; color: #fff; font-size: 24px;">Most agencies don't even know this wall exists. QCP was built around it.</h3>
+    <h3 class="display-strong" style="margin-top: 48px; color: #fff;">Most agencies don't even know this wall exists. QCP was built around it.</h3>
 
     <div class="body-stack wide" style="margin-top: 24px;">
       <p>We call it the <strong>Warm Seat Approach</strong>, and it inverts the entire dynamic. Instead of reaching out to pitch coaching, we position the business owner as the expert. They get featured. They get invited to share what they've built. The defensive wall never goes up.</p>
@@ -1546,7 +1556,7 @@
       <p>That's what a warm seat feels like. You sit down and the conversation is already halfway there. No cold start. No pitch. Just a prospect who already knows your name, already shared their challenges, and already chose to be in the room.</p>
     </div>
 
-    <h3 class="display-strong" style="margin-top: 48px; color: #fff; font-size: 24px;">How exactly do we engineer the warm seat? That's what the call is for.</h3>
+    <h3 class="display-strong" style="margin-top: 48px; color: #fff;">How exactly do we engineer the warm seat? That's what the call is for.</h3>
 
     <div style="margin-top: 48px;">
       <a href="#book" class="btn btn-light">Show Me How This Works for My Territory →</a>
@@ -1704,7 +1714,7 @@
       <p>Every month: 1,000 enriched prospect profiles with verified emails and 400 verified phone numbers mapped to your territory and ICP. Plus managed CRM, VOIP with local number, call recording, SMS, and weekly analytics across every channel. Ongoing copywriting for all outreach materials. All software included.</p>
     </div>
 
-    <h3 class="display-strong" style="margin-top: 32px; color: #fff; font-size: 24px;">8 to 15 pre-qualified COD calls in your diary every month.</h3>
+    <h3 class="display-strong punchline" style="margin-top: 32px; color: #fff;">8 to 15 pre-qualified COD calls in your diary every month.</h3>
     <div class="body-stack wide" style="margin-top: 16px;">
       <p>Plus GrowthCLUB attendees. Plus the long-term authority that content, events, and ongoing positioning build in your territory over time.</p>
     </div>
@@ -1781,18 +1791,24 @@
       <p>QCP runs campaigns in your territory, targeting your ideal clients, in your geography. We can't do that for two ActionCOACH licensees in the same area without cannibalising results for both. So we don't.</p>
     </div>
 
-    <h3 class="display-strong" style="margin-top: 32px; color: #fff; font-size: 24px;">One partner per territory. Once it's taken, it's closed.</h3>
+    <h3 class="display-strong punchline" style="margin-top: 32px; color: #fff;">One partner per territory. Once it's taken, it's closed.</h3>
 
     <div style="margin-top: 48px;">
       <div class="territory-head">Currently Available</div>
       <div class="territory-pills">
-        <span class="territory-pill">Greater Manchester</span>
-        <span class="territory-pill">Glasgow</span>
+        <span class="territory-pill">London (North)</span>
+        <span class="territory-pill">London (South)</span>
+        <span class="territory-pill">Manchester</span>
+        <span class="territory-pill">Birmingham</span>
+        <span class="territory-pill">Leeds</span>
+        <span class="territory-pill">Liverpool</span>
         <span class="territory-pill">Bristol</span>
-        <span class="territory-pill">Kent</span>
-        <span class="territory-pill">West Midlands</span>
-        <span class="territory-pill">Essex</span>
-        <span class="territory-pill">Devon</span>
+        <span class="territory-pill">Newcastle</span>
+        <span class="territory-pill">Edinburgh</span>
+        <span class="territory-pill">Glasgow</span>
+        <span class="territory-pill">Cardiff</span>
+        <span class="territory-pill">Nottingham</span>
+        <span class="territory-pill">Essex Central</span>
       </div>
     </div>
 
@@ -1911,7 +1927,7 @@
     <!-- Section 13 — P.S. -->
     <aside class="ps-card" aria-label="Postscript">
       <span class="ps-label">P.S.</span>
-      <p>Every month you wait is another month of pre-qualified COD calls going to whoever claims your territory first. Matt Donegan signed 7 clients in a single quarter. Nick Gowens signed a new client within his first few calls. Sanjiv Dodia saw ROI in under 90 days. The system works. The only question is whether your region is still available.
+      <p>Every month you wait is another month of pre-qualified COD calls going to whoever claims your territory first. Matt Donegan signed 7 clients in a single quarter. Nick Gowens signed a new client within his first few calls. Sanjiv Dodhia saw ROI in under 90 days. The system works. The only question is whether your region is still available.
       &nbsp;<a href="https://calendar.qcpmarketing.com/widget/booking/iqa3QV6ghN71OR3QfTMb" class="inline-link" target="_blank" rel="noopener">Check now. →</a></p>
     </aside>
   </div>
