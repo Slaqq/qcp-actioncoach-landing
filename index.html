@@ -505,20 +505,27 @@
     margin: 48px 0;
   }
   @media (min-width: 900px) { .tqual-grid { grid-template-columns: repeat(3, 1fr); gap: 48px; } }
-  .tqual-item { position: relative; padding-top: 44px; }
+  .tqual-item { position: relative; }
+  .tqual-head {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
   .tqual-item .marker {
-    position: absolute; top: 0; left: 0;
-    width: 28px; height: 28px;
+    width: 36px; height: 36px;
     display: inline-flex; align-items: center; justify-content: center;
     background: var(--accent);
-    border-radius: 999px;
+    border-radius: 10px;
+    flex-shrink: 0;
   }
-  .tqual-item .marker svg { width: 14px; height: 14px; }
+  .tqual-item .marker svg { width: 18px; height: 18px; color: var(--surface-dark); }
   .tqual-item h4 {
     font-size: 24px;
     font-weight: 700;
-    margin: 0 0 12px;
+    margin: 0;
     letter-spacing: -0.01em;
+    line-height: 1.1;
   }
   .tqual-item p {
     font-size: 15.5px;
@@ -660,8 +667,8 @@
     padding: 56px 24px;
     margin: 48px auto;
     max-width: 820px;
-    border-top: 1px solid rgba(0,0,0,0.08);
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: var(--bg-light);
+    border-radius: var(--radius-lg);
   }
   .price-display .num {
     font-family: var(--font-display);
@@ -1111,7 +1118,9 @@
 
     /* --- Qualification cards (T/T/M): proper spacing in single column --- */
     .tqual-grid { gap: 28px; margin: 36px 0; }
-    .tqual-item { padding-top: 38px; }
+    .tqual-head { gap: 12px; margin-bottom: 12px; }
+    .tqual-item .marker { width: 32px; height: 32px; border-radius: 8px; }
+    .tqual-item .marker svg { width: 16px; height: 16px; }
     .tqual-item h4 { font-size: 20px; }
     .tqual-item p { font-size: 15px; }
 
@@ -1179,11 +1188,43 @@
     .qmark-watermark.right { right: -120px; }
     .qmark-watermark svg { height: 360px; width: 360px; }
 
-    /* --- Footer: stacked, comfortable spacing --- */
-    .footer-inner { padding: 28px 0 20px; }
-    .footer-top { gap: 24px; padding-bottom: 20px; }
-    .footer-brand .fb-logo { height: 18px; }
-    .footer-bottom .copy, .footer-bottom .book-link { font-size: 9.5px; }
+    /* --- Footer: clean stacked layout, tappable text --- */
+    .footer-inner { padding: 36px 0 24px; }
+    .footer-top {
+      flex-direction: column;
+      gap: 28px;
+      padding-bottom: 28px;
+      align-items: flex-start;
+    }
+    .footer-brand .fb-logo { height: 24px; margin-bottom: 16px; }
+    .footer-brand .fb-contact { gap: 8px; }
+    .footer-brand .fb-contact a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      padding: 4px 0;
+    }
+    .footer-nav h5 { font-size: 9.5px; margin-bottom: 8px; }
+    .footer-nav .single-pair { font-size: 13px; color: rgba(255,255,255,0.5); }
+    .footer-addr {
+      margin-left: 0;
+      text-align: left;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.55;
+    }
+    .footer-bottom {
+      gap: 14px;
+      padding: 18px 0 4px;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .footer-bottom .copy { font-size: 11px; color: rgba(255,255,255,0.35); }
+    .footer-bottom .book-link {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      padding: 8px 0;
+    }
 
     /* --- Hero scroll beacon: smaller on mobile --- */
     .hero-scroll-beacon { height: 6rem; }
@@ -1214,6 +1255,24 @@
     <!-- Tick icon -->
     <symbol id="icon-tick" viewBox="0 0 14 12">
       <path d="M1 6l4 4L13 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- Lucide: Users (Team) -->
+    <symbol id="icon-users" viewBox="0 0 24 24">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="9" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- Lucide: Clock (Time) -->
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <polyline points="12 6 12 12 16 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- Lucide: Banknote (Money) -->
+    <symbol id="icon-banknote" viewBox="0 0 24 24">
+      <rect width="20" height="12" x="2" y="6" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M6 12h.01M18 12h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
   </defs>
 </svg>
@@ -1370,7 +1429,7 @@
 <!-- ============== SECTION 3 — AGITATION ============== -->
 <section class="sec-white sec-pad" style="padding-top: 0;" aria-label="Why every licensee faces this">
   <div class="container">
-    <div class="section-head" style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 96px;">
+    <div class="section-head" style="padding-top: 64px;">
       <div class="eyebrow-split"><span>Why Every ActionCOACH Licensee Faces This</span></div>
       <h2 class="h2">
         You Have the Methodology. You Have the Brand. You Don't Have Enough <span class="accent-word">Hours</span> in the Day.
@@ -1481,18 +1540,24 @@
 
     <div class="tqual-grid">
       <div class="tqual-item">
-        <span class="marker" aria-hidden="true" style="color: #0A1620;"><svg><use href="#icon-tick"/></svg></span>
-        <h4>Team.</h4>
+        <div class="tqual-head">
+          <span class="marker" aria-hidden="true"><svg><use href="#icon-users"/></svg></span>
+          <h4>Team.</h4>
+        </div>
         <p>Does this business have the team size and structure that makes coaching relevant? We confirm they're not a solopreneur with no employees and no capacity to implement what you teach. Only businesses with real teams and real operational challenges make it through.</p>
       </div>
       <div class="tqual-item">
-        <span class="marker" aria-hidden="true" style="color: #0A1620;"><svg><use href="#icon-tick"/></svg></span>
-        <h4>Time.</h4>
+        <div class="tqual-head">
+          <span class="marker" aria-hidden="true"><svg><use href="#icon-clock"/></svg></span>
+          <h4>Time.</h4>
+        </div>
         <p>Is this person genuinely available and willing to engage? We confirm real intent, not polite interest. Not "maybe next quarter."</p>
       </div>
       <div class="tqual-item">
-        <span class="marker" aria-hidden="true" style="color: #0A1620;"><svg><use href="#icon-tick"/></svg></span>
-        <h4>Money.</h4>
+        <div class="tqual-head">
+          <span class="marker" aria-hidden="true"><svg><use href="#icon-banknote"/></svg></span>
+          <h4>Money.</h4>
+        </div>
         <p>Does the business have the estimated turnover and budget to invest in coaching? We verify this directly, so you never sit across from someone who can't afford to say yes.</p>
       </div>
     </div>
