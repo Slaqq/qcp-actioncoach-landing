@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Qualified Coaching Pipeline — For ActionCOACH Licensees</title>
+<link rel="icon" type="image/svg+xml" href="assets/qcp-logo-icon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Slab:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* QCP tokens from website-brand-tokens.json */
+    --surface-dark: #0A1620;
+    --surface-dark-alt: #1A1A1A;
+    --surface-dark-2: #141B25;
+    --surface-dark-3: #1F2734;
+    --bg-light: #F3F3F3;
+    --body: #505050;
+    --body-alt: #4E5055;
+    --muted: #6A727F;
+    --inverse: #FFFFFF;
+    --border: #e5e7eb;
+
+    /* ActionCOACH accent (replaces QCP primary on THIS page only) */
+    --accent: #FFED34;
+    --accent-soft: rgba(255, 237, 52, 0.08);
+    --accent-border: rgba(255, 237, 52, 0.4);
+    --accent-franchise-bg: #202020;
+
+    --font-sans: "Plus Jakarta Sans", Arial, sans-serif;
+    --font-display: "League Spartan", "Plus Jakarta Sans", sans-serif;
+    --font-serif: "Roboto Slab", Georgia, serif;
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    color: var(--body);
+    background: #fff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    color: var(--surface-dark);
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  @media (min-width: 1024px) {
+    .container { padding: 0 24px; }
+  }
+
+  section { position: relative; }
+  .sec-dark { background: var(--surface-dark); color: var(--inverse); }
+  .sec-dark h1, .sec-dark h2, .sec-dark h3, .sec-dark h4 { color: #fff; }
+  .sec-white { background: #fff; }
+  .sec-gray { background: var(--bg-light); }
+  .sec-pad { padding: 96px 0; }
+  @media (min-width: 1024px) { .sec-pad { padding: 120px 0; } }
+
+  /* ---------- NAVBAR (matches main site pattern — transparent over hero) ---------- */
+  .nav {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 30;
+    height: 80px;
+  }
+  .nav-inner {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    height: 36px;
+    width: auto;
+    color: #fff;
+  }
+  .nav-logo svg { height: 100%; width: auto; }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 24px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s ease;
+  }
+  .nav-cta:hover { background: rgba(255,255,255,0.2); }
+
+  /* ---------- Type system ---------- */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 40px; height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .eyebrow.on-light { color: #0A1620; }
+  .eyebrow.on-light::before { background: var(--accent); }
+  .eyebrow.on-light span.label { position: relative; padding-left: 0; }
+
+  /* Eyebrow variant: on light bg, keep line yellow, text dark-navy */
+  .eyebrow-split {
+    display: inline-flex; align-items: center; gap: 16px;
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--surface-dark);
+    margin-bottom: 32px;
+  }
+  .eyebrow-split::before {
+    content: ""; width: 40px; height: 1px; background: var(--accent);
+    display: inline-block;
+  }
+
+  .h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(40px, 5.8vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: #fff;
+    text-wrap: balance;
+  }
+  .h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(32px, 4.2vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .accent-word { color: var(--accent); }
+  .h2 .accent-word, .h2.on-light-accent .accent-word {
+    /* On light: underline with yellow because yellow-on-white text fails contrast */
+    color: var(--surface-dark);
+    border-bottom: 4px solid var(--accent);
+    padding-bottom: 2px;
+  }
+  .sec-dark .h2 .accent-word {
+    color: var(--accent);
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .subhead {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: clamp(18px, 1.6vw, 22px);
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    max-width: 52ch;
+  }
+
+  .lede, .body-stack p {
+    font-family: var(--font-sans);
+    font-size: clamp(16px, 1.2vw, 18px);
+    line-height: 1.8;
+    color: var(--body);
+    max-width: 62ch;
+  }
+  .sec-dark .lede, .sec-dark .body-stack p { color: rgba(255,255,255,0.75); }
+  .body-stack p { margin: 0; }
+  .body-stack p + p { margin-top: 24px; }
+  .sec-dark .body-stack strong { color: #fff; }
+
+  .pull-quote {
+    margin: 40px 0;
+    padding: 24px 8px 24px 28px;
+    border-left: 2px solid var(--accent);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(20px, 2.1vw, 26px);
+    line-height: 1.5;
+    max-width: 62ch;
+    color: inherit;
+  }
+  .sec-dark .pull-quote { color: rgba(255,255,255,0.92); }
+
+  em, .serif-it {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 56px;
+    padding: 0 36px;
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.25s ease, background 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn-light {
+    background: #fff;
+    color: var(--surface-dark);
+    box-shadow: 0 0 40px rgba(255,255,255,0.15);
+  }
+  .btn-light:hover {
+    box-shadow: 0 0 60px rgba(255,255,255,0.25);
+    background: #f3f3f3;
+  }
+  .btn-dark {
+    background: var(--surface-dark);
+    color: #fff;
+  }
+  .btn-dark:hover { background: var(--surface-dark-alt); transform: translateY(-1px); }
+  .btn-lg { height: 64px; padding: 0 44px; font-size: 15px; }
+
+  .cta-note {
+    display: block;
+    margin-top: 18px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+    font-weight: 500;
+  }
+  .cta-note.on-dark { color: rgba(255,255,255,0.4); }
+  .cta-note.on-light { color: var(--muted); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 180px 0 120px;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .hero { padding: 200px 0 160px; }
+  }
+  /* Left edge accent rule — 1px vertical gradient (yellow) */
+  .hero-left-edge {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(255, 237, 52, 0.6) 50%,
+      transparent 100%);
+    pointer-events: none;
+  }
+  /* Atmospheric depth gradient — radial ellipse lower-left */
+  .hero-glow {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 70% at 5% 60%,
+      rgba(255, 237, 52, 0.08),
+      transparent);
+    pointer-events: none;
+  }
+  /* SVG pattern overlay at opacity 0.06 — identical to main site */
+  .hero-pattern {
+    position: absolute; inset: 0;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+  .hero-pattern svg { width: 100%; height: 100%; display: block; }
+
+  .hero-inner { position: relative; z-index: 2; }
+
+  /* Hero co-brand strip — QCP + ActionCOACH wordmark */
+  .co-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 32px;
+    opacity: 0.95;
+  }
+  .co-brand .qcp-mark {
+    height: 20px;
+    color: rgba(255,255,255,0.6);
+    display: inline-flex;
+    align-items: center;
+  }
+  .co-brand .qcp-mark svg { height: 100%; width: auto; }
+  .co-brand .divider {
+    width: 1px; height: 24px;
+    background: rgba(255,255,255,0.2);
+  }
+  .co-brand .ac-wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.24em;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .co-brand .ac-wordmark .partner {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    opacity: 0.5;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .hero-body {
+    margin-top: 40px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.72);
+    max-width: 58ch;
+  }
+  .hero-body p + p { margin-top: 18px; }
+  .hero-body strong { color: #fff; font-weight: 600; }
+
+  .hero-cta-wrap { margin-top: 40px; }
+  .hero-sub-line {
+    margin-top: 32px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    max-width: 60ch;
+  }
+
+  /* ---------- QMark watermark ---------- */
+  .qmark-watermark {
+    position: absolute;
+    inset-block: 0;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0.03;
+    z-index: 0;
+  }
+  .qmark-watermark.right { right: -80px; }
+  .qmark-watermark.left { left: -80px; }
+  .qmark-watermark.center {
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    inset-block: auto;
+  }
+  .qmark-watermark svg {
+    height: 520px; width: 520px; color: #fff;
+  }
+  .qmark-watermark.invert svg { color: #fff; }
+
+  /* ---------- Section head ---------- */
+  .section-head { margin-bottom: 56px; max-width: 820px; }
+  .section-head .sub {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+  .sec-dark .section-head .sub { color: rgba(255,255,255,0.6); }
+
+  /* ---------- Testimonial cards (franchise dark #202020 treatment) ---------- */
+  .testi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 900px) { .testi-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
+
+  .testi-card {
+    background: var(--accent-franchise-bg);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.28);
+    overflow: hidden;
+  }
+  .testi-card .brand-strip {
+    display: flex; align-items: center; justify-content: flex-end;
+    margin-bottom: 14px;
+    height: 32px;
+    gap: 10px;
+  }
+  .testi-card .brand-strip .ac-mark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+  }
+  .testi-card .avatar-row {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 20px;
+  }
+  .testi-card .avatar-row .circle {
+    width: 44px; height: 44px; border-radius: 999px;
+    background: #2a2a2a;
+    border: 2px solid var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+  }
+  .testi-card .avatar-row .who .name {
+    display: block;
+    font-weight: 700;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  .testi-card .avatar-row .who .title {
+    display: block;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+  .testi-card .quote-mark {
+    font-family: var(--font-display);
+    font-size: 42px;
+    line-height: 0.5;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+    user-select: none;
+  }
+  .testi-card blockquote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.82);
+    margin: 0 0 20px;
+    flex: 1;
+  }
+  .testi-card .stat-callout {
+    padding: 12px 16px;
+    border-left: 3px solid var(--accent);
+    background: rgba(255,237,52,0.08);
+    border-radius: 0 6px 6px 0;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.45;
+  }
+  .testi-card.no-stat { padding-bottom: 28px; }
+
+  /* ---------- Three-col qualification ---------- */
+  .tqual-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+    margin: 48px 0;
+  }
+  @media (min-width: 900px) { .tqual-grid { grid-template-columns: repeat(3, 1fr); gap: 48px; } }
+  .tqual-item { position: relative; padding-top: 44px; }
+  .tqual-item .marker {
+    position: absolute; top: 0; left: 0;
+    width: 28px; height: 28px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--accent);
+    border-radius: 999px;
+  }
+  .tqual-item .marker svg { width: 14px; height: 14px; }
+  .tqual-item h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .tqual-item p {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--body);
+    margin: 0;
+  }
+
+  /* ---------- Strategy cards ---------- */
+  .strategy-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+    margin-top: 48px;
+  }
+  @media (min-width: 900px) { .strategy-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
+  .strategy-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+    display: flex; flex-direction: column; gap: 16px;
+    height: 100%;
+    border: 1px solid rgba(10,22,32,0.04);
+  }
+  .strategy-card .tick {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .strategy-card .tick svg { width: 14px; height: 14px; }
+  .strategy-card .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .strategy-card .num .digit { color: var(--surface-dark); }
+  .strategy-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+  .strategy-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--body);
+    margin: 0;
+  }
+
+  /* ---------- Channels grid + stat strip ---------- */
+  .channel-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 48px 0 48px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  @media (min-width: 768px) { .channel-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .channel-grid { grid-template-columns: repeat(4, 1fr); } }
+  .channel {
+    padding: 32px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  @media (min-width: 1024px) {
+    .channel { border-bottom: 0; border-right: 1px solid rgba(255,255,255,0.08); }
+    .channel:last-child { border-right: 0; }
+  }
+  .channel:last-child { border-bottom: 0; }
+  .channel .dot-label {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .channel .dot-label .sq {
+    width: 10px; height: 10px; background: var(--accent); display: inline-block;
+  }
+  .channel p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(4px);
+    margin: 48px 0;
+    overflow: hidden;
+  }
+  @media (min-width: 900px) { .stat-strip { grid-template-columns: repeat(4, 1fr); } }
+  .stat-item {
+    padding: 28px 24px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-item:last-child { border-right: 0; }
+  @media (min-width: 900px) {
+    .stat-item:nth-child(4n) { border-right: 0; }
+    .stat-item { border-bottom: 0; }
+  }
+  .stat-item .n {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(32px, 3.8vw, 44px);
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    display: block;
+  }
+  .stat-item .label {
+    display: block;
+    margin-top: 10px;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+
+  /* ---------- Pricing ---------- */
+  .price-display {
+    text-align: center;
+    padding: 56px 24px;
+    margin: 48px auto;
+    max-width: 820px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .price-display .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(44px, 6vw, 68px);
+    color: var(--surface-dark);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .price-display .num .currency {
+    font-size: 0.55em;
+    vertical-align: super;
+    margin-right: 4px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .price-display .num .per {
+    font-size: 0.36em;
+    color: var(--muted);
+    font-weight: 500;
+    margin-left: 8px;
+  }
+  .price-display .plus {
+    display: block;
+    margin-top: 18px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--body);
+    letter-spacing: -0.01em;
+  }
+  .price-display .plus .rev-accent {
+    color: var(--surface-dark);
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 2px;
+  }
+
+  .pricing-boxes {
+    display: grid; gap: 24px;
+    grid-template-columns: 1fr;
+    margin-top: 56px;
+  }
+  @media (min-width: 900px) { .pricing-boxes { grid-template-columns: 1fr 1fr; gap: 32px; } }
+  .pricing-box {
+    background: var(--bg-light);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    border-radius: 0 8px 8px 0;
+  }
+  .pricing-box h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .pricing-box p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--body); }
+
+  /* ---------- Emphasis callout ---------- */
+  .emphasis-box {
+    border-left: 3px solid var(--accent);
+    background: #fff;
+    padding: 24px 28px;
+    border-radius: 0 8px 8px 0;
+    max-width: 820px;
+  }
+  .emphasis-box p {
+    margin: 0; font-size: 16px; line-height: 1.65; color: var(--body);
+  }
+
+  /* ---------- Territory pills ---------- */
+  .territory-head {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .territory-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .territory-pill {
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1px solid var(--accent-border);
+    background: rgba(255, 237, 52, 0.04);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+  }
+  .territory-pill::before {
+    content: "";
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 999px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+    margin-top: 48px;
+  }
+  @media (min-width: 900px) { .timeline { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
+  .timeline-stage {
+    padding: 32px 28px;
+    background: #fff;
+    border-top: 3px solid var(--accent);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    box-shadow: 0 4px 24px rgba(10,22,32,0.06);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .timeline-stage .stage-label {
+    font-family: var(--font-sans);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .timeline-stage .stage-label .stage-num { color: var(--surface-dark); font-family: var(--font-display); }
+  .timeline-stage h3 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+  .timeline-stage p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--body);
+    margin: 0;
+  }
+  .timeline-closer {
+    margin-top: 48px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list {
+    display: grid;
+    gap: 4px;
+    margin-top: 48px;
+    max-width: 900px;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: var(--radius-md);
+    padding: 28px 32px;
+  }
+  .faq-item h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .faq-item p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--body);
+  }
+
+  /* ---------- P.S. card ---------- */
+  .ps-card {
+    margin-top: 72px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(4px);
+    border-radius: var(--radius-xl);
+    padding: 36px 40px;
+    max-width: 820px;
+  }
+  .ps-card .ps-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+  .ps-card p {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.82);
+    margin: 0;
+  }
+  .ps-card .inline-link {
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+    font-style: normal;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* ---------- Section act break ---------- */
+  .act-break {
+    display: flex; justify-content: center; align-items: center;
+    gap: 12px;
+    margin: 56px 0;
+  }
+  .act-break .line { width: 32px; height: 1px; background: rgba(255,237,52,0.4); }
+  .act-break .dot { width: 6px; height: 6px; border-radius: 999px; background: rgba(255,237,52,0.5); }
+
+  /* ---------- Footer (match main site compact structure) ---------- */
+  footer {
+    background: var(--surface-dark);
+    color: #fff;
+    position: relative;
+  }
+  .footer-seam {
+    height: 2px;
+    background: linear-gradient(to right,
+      transparent, rgba(255,237,52,0.4), transparent);
+  }
+  .footer-inner { padding: 32px 0 24px; }
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 24px;
+  }
+  @media (min-width: 768px) {
+    .footer-top {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 48px;
+    }
+  }
+  .footer-brand .fb-logo {
+    height: 22px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 12px;
+    display: inline-block;
+  }
+  .footer-brand .fb-logo svg { height: 100%; width: auto; }
+  .footer-brand .fb-contact {
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .footer-brand .fb-contact a {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    transition: color 0.2s ease;
+  }
+  .footer-brand .fb-contact a:hover { color: rgba(255,255,255,0.6); }
+
+  .footer-nav h5 {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    margin: 0 0 12px;
+  }
+  .footer-nav .single-pair {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .footer-addr {
+    margin-left: auto;
+    font-style: normal;
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.2);
+    line-height: 1.6;
+    text-align: right;
+    font-family: var(--font-sans);
+  }
+  @media (max-width: 767px) { .footer-addr { margin-left: 0; text-align: left; } }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  @media (min-width: 640px) {
+    .footer-bottom { flex-direction: row; justify-content: space-between; }
+  }
+  .footer-bottom .copy {
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.02em;
+  }
+  .footer-bottom .book-link {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    transition: color 0.2s ease;
+  }
+  .footer-bottom .book-link:hover { color: var(--accent); }
+
+  /* ---------- Utilities ---------- */
+  .max-3xl { max-width: 768px; }
+  .max-4xl { max-width: 896px; }
+  .wide { max-width: 68ch; }
+  .mt-8 { margin-top: 32px; }
+  .mt-12 { margin-top: 48px; }
+  .mt-16 { margin-top: 64px; }
+
+  /* Reduce hero bottom padding on the transitional divider */
+  .hero-scroll-beacon {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 12rem;
+    pointer-events: none;
+    background: radial-gradient(ellipse 28% 70% at 50% 100%,
+      rgba(255,237,52,0.16), transparent);
+  }
+
+  /* Plain display text helper (strong display-font call-outs in body) */
+  .display-strong {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--surface-dark);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .sec-dark .display-strong { color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- SVG defs for reusable QCP icon / logo text -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Logo text "QCP" + dot -->
+    <symbol id="qcp-wordmark" viewBox="0 0 160 40">
+      <circle cx="6" cy="26" r="5" fill="currentColor"/>
+      <text x="18" y="32" font-family="League Spartan, sans-serif" font-weight="800" font-size="30" letter-spacing="-0.02em" fill="currentColor">QCP</text>
+    </symbol>
+    <!-- Tick icon -->
+    <symbol id="icon-tick" viewBox="0 0 14 12">
+      <path d="M1 6l4 4L13 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============== NAVBAR (transparent over hero) ============== -->
+<nav class="nav" aria-label="Primary">
+  <div class="container nav-inner">
+    <a href="#" aria-label="QCP" style="display:inline-flex; align-items:center;">
+      <img src="assets/qcp-logo-horizontal.svg" alt="QCP" style="height:28px; width:auto; filter: brightness(0) invert(1);" />
+    </a>
+    <a href="#book" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<!-- ============== SECTION 1 — HERO ============== -->
+<section class="sec-dark hero" aria-label="Hero">
+  <!-- Atmospheric layers -->
+  <div class="hero-left-edge" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-pattern" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+          <path d="M 48 0 L 0 0 0 48" fill="none" stroke="white" stroke-width="0.75" />
+        </pattern>
+        <pattern id="hero-dot" width="48" height="48" patternUnits="userSpaceOnUse">
+          <circle cx="0" cy="0" r="1.2" fill="white" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hero-grid)" />
+      <rect width="100%" height="100%" fill="url(#hero-dot)" />
+    </svg>
+  </div>
+  <!-- QMark watermark -->
+  <div class="qmark-watermark right invert" aria-hidden="true" style="opacity:0.04;">
+    <svg viewBox="0 0 1773 1773" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor" d="M 1727.15 898.15 Q 1704.99 929.75 1670.43 946.89 C 1643.52 960.24 1613.17 964.80 1583.09 962.48 C 1556.79 960.44 1529.72 951.54 1507.10 937.87 C 1488.89 926.86 1472.80 913.60 1459.82 897.40 C 1446.03 880.17 1435.06 860.98 1428.49 839.60 C 1423.39 822.97 1419.98 798.03 1416.39 782.38 Q 1400.77 714.34 1371.90 655.57 Q 1363.84 639.16 1350.36 616.00 Q 1339.99 598.18 1328.36 581.65 Q 1318.03 566.98 1304.07 549.14 Q 1292.67 534.57 1282.64 523.96 C 1264.79 505.09 1248.20 488.01 1229.37 471.85 Q 1228.17 470.82 1209.66 455.75 C 1190.35 440.02 1167.30 424.67 1148.05 413.26 Q 1118.96 396.02 1080.83 379.40 Q 1077.51 377.96 1052.28 368.71 Q 1035.33 362.49 1023.40 359.07 Q 983.48 347.63 943.76 342.72 Q 942.89 342.61 922.25 340.64 Q 909.84 339.45 900.71 339.26 Q 867.68 338.58 848.78 340.12 C 815.85 342.80 784.14 347.30 752.65 354.90 Q 712.41 364.60 671.63 380.72 Q 648.24 389.96 626.58 401.20 Q 601.54 414.18 583.43 425.45 Q 572.78 432.07 552.13 447.02 C 527.33 464.96 504.58 485.01 484.00 506.01 Q 474.65 515.55 463.95 527.95 C 418.11 581.09 383.76 644.29 363.12 711.12 Q 351.43 748.96 344.93 794.25 Q 336.31 854.23 341.04 914.54 C 342.79 936.83 346.42 958.24 350.83 981.21 Q 353.89 997.13 356.68 1007.36 C 368.28 1049.83 384.21 1090.43 406.53 1129.74 Q 441.40 1191.11 491.64 1243.12 Q 529.00 1281.80 570.31 1312.19 Q 601.29 1334.98 635.82 1353.69 C 717.74 1398.08 808.51 1423.68 901.27 1424.87 Q 926.90 1425.20 933.73 1425.46 C 966.09 1426.70 995.89 1435.84 1022.57 1453.29 Q 1035.02 1461.44 1043.12 1468.63 Q 1056.09 1480.14 1067.60 1496.44 Q 1090.96 1529.54 1096.99 1569.58 C 1103.45 1612.47 1093.82 1656.65 1069.30 1692.31 Q 1062.95 1701.55 1051.81 1713.41 C 1028.65 1738.08 997.41 1753.00 965.04 1760.32 Q 963.10 1760.76 949.44 1762.83 C 930.54 1765.70 911.61 1764.45 892.41 1764.23 Q 872.40 1763.99 845.47 1762.31 Q 826.97 1761.15 800.51 1758.42 Q 782.53 1756.56 752.96 1751.84 Q 707.30 1744.54 660.56 1731.94 Q 636.12 1725.35 615.44 1718.31 Q 596.64 1711.91 560.36 1697.91 C 552.62 1694.92 541.14 1689.99 532.50 1685.93 Q 520.03 1680.08 494.96 1667.54 C 466.02 1653.06 437.37 1635.78 410.31 1618.26 Q 399.40 1611.19 375.98 1594.17 Q 355.91 1579.57 342.58 1568.69 Q 305.46 1538.39 272.46 1505.88 Q 192.13 1426.75 134.28 1329.23 Q 101.55 1274.06 78.08 1215.40 Q 35.54 1109.04 23.93 995.07 Q 23.13 987.22 21.05 960.74 C 19.56 941.68 19.28 927.67 18.48 904.67 Q 18.05 892.47 18.25 886.90 C 18.52 879.04 17.94 872.54 18.24 863.05 Q 19.49 823.93 19.96 815.76 Q 25.11 726.56 47.89 637.69 C 67.35 561.77 98.46 485.98 139.74 417.47 Q 165.24 375.14 193.09 338.57 Q 200.99 328.20 219.74 306.10 Q 233.49 289.90 247.92 274.98 Q 282.11 239.65 317.69 210.00 C 359.85 174.89 404.51 144.71 453.06 117.83 Q 561.25 57.95 682.32 30.86 Q 745.48 16.73 813.75 11.57 Q 820.22 11.08 846.44 9.67 Q 873.28 8.22 906.16 9.44 Q 915.79 9.80 923.30 10.53 C 931.01 11.27 938.45 11.45 946.17 12.07 Q 981.41 14.87 1019.50 21.02 Q 1054.77 26.72 1085.74 34.79 C 1160.88 54.37 1229.92 81.94 1295.82 119.19 Q 1307.31 125.68 1329.34 139.24 C 1362.31 159.53 1392.84 181.77 1423.89 206.85 Q 1498.22 266.88 1556.00 338.24 Q 1573.95 360.41 1597.06 392.50 C 1618.19 421.83 1637.33 454.04 1653.19 483.27 Q 1665.03 505.12 1680.73 539.25 Q 1699.34 579.73 1714.67 626.28 Q 1729.12 670.12 1738.39 710.28 Q 1746.37 744.84 1752.37 784.46 Q 1753.44 791.53 1754.23 809.20 Q 1754.91 824.54 1750.76 843.27 C 1746.41 862.87 1738.67 881.72 1727.15 898.15 Z M 1047.72 1239.76 A 1.34 1.33 -24.1 0 1 1047.05 1241.49 Q 1025.23 1251.69 1004.02 1258.58 Q 983.22 1265.35 959.20 1270.34 Q 934.81 1275.41 906.51 1277.01 Q 842.97 1280.62 781.14 1264.35 Q 751.53 1256.55 728.32 1246.17 C 705.17 1235.81 680.86 1222.68 659.06 1207.08 Q 600.83 1165.43 559.80 1107.22 Q 539.80 1078.85 525.32 1046.97 C 506.60 1005.73 494.53 960.77 491.05 915.51 Q 489.83 899.55 490.43 875.20 C 491.25 842.56 496.26 809.15 505.67 777.37 Q 515.71 743.46 531.02 711.99 Q 536.92 699.88 550.15 678.22 Q 560.83 660.74 572.18 646.29 C 603.69 606.21 642.11 571.71 685.90 546.43 Q 712.78 530.93 738.70 520.75 Q 802.50 495.70 870.49 493.59 C 943.66 491.32 1015.52 509.38 1079.04 546.05 C 1139.30 580.84 1189.12 631.83 1223.99 692.27 Q 1227.81 698.89 1234.54 712.51 Q 1240.53 724.61 1244.15 733.21 Q 1290.69 843.64 1268.13 962.84 C 1267.40 966.72 1265.87 974.53 1262.75 976.62 A 1.17 1.16 35.9 0 1 1261.80 976.77 Q 1258.31 975.85 1256.38 975.13 Q 1238.33 968.41 1194.57 952.60 Q 1159.33 939.87 1146.23 934.96 C 1122.23 925.97 1104.24 920.00 1081.80 911.38 Q 1071.45 907.40 1024.00 890.49 Q 1013.91 886.90 923.24 853.01 Q 913.06 849.21 900.22 850.93 Q 879.27 853.74 867.64 869.28 Q 858.31 881.75 857.13 897.16 Q 855.99 912.23 864.01 926.23 C 868.32 933.75 871.05 938.98 873.79 943.52 Q 885.55 962.98 903.20 993.44 C 917.38 1017.93 929.98 1038.97 945.57 1065.74 C 957.54 1086.28 971.78 1109.81 985.61 1133.80 Q 992.51 1145.77 1001.55 1161.10 Q 1036.48 1220.33 1044.20 1233.07 Q 1046.49 1236.85 1047.72 1239.76 Z"/>
+    </svg>
+  </div>
+
+  <div class="container hero-inner">
+    <div class="max-3xl">
+      <div class="eyebrow">For ActionCOACH Licensees</div>
+
+      <div class="co-brand">
+        <span class="qcp-mark">
+          <img src="assets/qcp-logo-horizontal.svg" alt="QCP" style="height:20px; filter: brightness(0) invert(1); opacity:0.6;" />
+        </span>
+        <span class="divider"></span>
+        <span class="ac-logo-wrap" style="display:inline-flex; align-items:center; gap:14px;">
+          <img src="assets/ac-logo.webp" alt="ActionCOACH" style="height:48px; width:auto; filter: brightness(0) invert(1);" />
+          <span class="partner" style="font-family: var(--font-sans); font-size: 9px; letter-spacing: 0.32em; color: rgba(255,255,255,0.5); text-transform: uppercase; font-weight: 500;">PARTNERSHIP</span>
+        </span>
+      </div>
+
+      <h1 class="h1">
+        How Matt Donegan Signed 7 Clients in 90 Days and Built £10,000+ MRR, Without Making a Single Outreach Call. His Pipeline Was <span class="accent-word">Already</span> Warm.
+      </h1>
+
+      <p class="subhead" style="margin-top:32px;">
+        For ActionCOACH licensees who are tired of running their own outreach.
+      </p>
+
+      <div class="hero-body">
+        <p>Matt Donegan is a <strong>Senior Partner</strong> at ActionCOACH. He didn't cold-call anyone. Didn't send a single LinkedIn message. Didn't chase a single prospect between coaching sessions.</p>
+        <p>He plugged into the <strong>Qualified Coaching Pipeline</strong>, and while he spent his days coaching, his diary filled itself.</p>
+        <p>Not leads. Not contact lists. Pre-qualified <strong>COD calls</strong> with business owners who match your ideal client profile, already briefed, already engaged. Plus GrowthCLUB attendees who arrive qualified and ready to talk. You focus on coaching. Your pipeline runs without you.</p>
+      </div>
+
+      <div class="hero-cta-wrap">
+        <a href="#book" class="btn btn-light btn-lg">Show Me How This Works for My Territory →</a>
+        <span class="cta-note on-dark">30 Minutes · No Obligation · Just Your Territory and What's Possible</span>
+      </div>
+
+      <p class="hero-sub-line">
+        <em>Nick Gowens signed a new client within his first few calls. Sanjiv Dodia saw ROI in under 90 days.</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="hero-scroll-beacon" aria-hidden="true"></div>
+</section>
+
+<!-- ============== SECTION 2 — TESTIMONIALS ============== -->
+<section class="sec-white sec-pad" aria-label="Partner testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-split"><span>What Our ActionCOACH Partners Say</span></div>
+      <h2 class="h2">
+        Real results. Real licensees. Real <span class="accent-word">ActionCOACH</span> territories.
+      </h2>
+    </div>
+
+    <div class="testi-grid">
+      <article class="testi-card">
+        <div class="brand-strip"><img src="assets/ac-logo.webp" alt="ActionCOACH" style="height:28px; width:auto; filter: brightness(0) invert(1); opacity:0.85;" /></div>
+        <div class="avatar-row">
+          <img class="circle" src="assets/headshots/matt-donegan.jpeg" alt="Matt Donegan" style="object-fit:cover;" />
+          <span class="who"><span class="name">Matt Donegan</span><span class="title">Senior Partner at ActionCOACH</span></span>
+        </div>
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <blockquote>They always deliver on KPIs, even stretch goals. Proactive account management geared to improving performance. Dedicated SDR aligned to my business needs. Professional, flexible, and full of added value. What's not to recommend?</blockquote>
+        <div class="stat-callout">7 clients signed in Q1 · Over £10,000 in monthly recurring revenue</div>
+      </article>
+
+      <article class="testi-card">
+        <div class="brand-strip" style="gap:10px;">
+          <img src="assets/ac-logo.webp" alt="ActionCOACH" style="height:28px; width:auto; filter: brightness(0) invert(1); opacity:0.85;" />
+          <span class="ac-mark" style="font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.28em; color: rgba(255,255,255,0.45); text-transform: uppercase;">· OXFORD</span>
+        </div>
+        <div class="avatar-row">
+          <img class="circle" src="assets/headshots/nick-gowens.jpeg" alt="Nick Gowens" style="object-fit:cover;" />
+          <span class="who"><span class="name">Nick Gowens</span><span class="title">Managing Director of ActionCOACH Oxford</span></span>
+        </div>
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <blockquote>Within the first few calls, I'd already signed a new client. The QCP team made the entire GrowthCLUB process seamless.</blockquote>
+        <div class="stat-callout">Signed a new client within weeks of launch</div>
+      </article>
+
+      <article class="testi-card no-stat">
+        <div class="brand-strip" style="gap:10px;">
+          <img src="assets/ac-logo.webp" alt="ActionCOACH" style="height:28px; width:auto; filter: brightness(0) invert(1); opacity:0.85;" />
+          <span class="ac-mark" style="font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.28em; color: rgba(255,255,255,0.45); text-transform: uppercase;">UK</span>
+        </div>
+        <div class="avatar-row">
+          <img class="circle" src="assets/headshots/sanjiv-dodhia.jpeg" alt="Sanjiv Dodhia" style="object-fit:cover;" />
+          <span class="who"><span class="name">Sanjiv Dodia</span><span class="title">ActionCOACH UK</span></span>
+        </div>
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <blockquote>ROI in under 90 days through case study based outreach. QCP helped me connect with local SMEs and turn those calls into paying clients.</blockquote>
+      </article>
+
+      <article class="testi-card">
+        <div class="brand-strip" style="gap:10px;">
+          <img src="assets/ac-logo.webp" alt="ActionCOACH" style="height:28px; width:auto; filter: brightness(0) invert(1); opacity:0.85;" />
+          <span class="ac-mark" style="font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.28em; color: rgba(255,255,255,0.45); text-transform: uppercase;">· LONDON</span>
+        </div>
+        <div class="avatar-row">
+          <img class="circle" src="assets/headshots/matt-whittingham.jpeg" alt="Matt Whittingham" style="object-fit:cover;" />
+          <span class="who"><span class="name">Matt Whittingham</span><span class="title">Senior Partner, ActionCOACH</span></span>
+        </div>
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <blockquote>Great team, who I've been working with for almost a year now. QCP have booked almost 100 conversations for me with leading business owners in London, right up to CEO level. Recommended.</blockquote>
+        <div class="stat-callout">100 conversations booked in 12 months</div>
+      </article>
+    </div>
+
+    <div style="margin-top: 64px;">
+      <a href="#book" class="btn btn-dark">Show Me How This Works for My Territory →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SECTION 3 — AGITATION ============== -->
+<section class="sec-white sec-pad" style="padding-top: 0;" aria-label="Why every licensee faces this">
+  <div class="container">
+    <div class="section-head" style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 96px;">
+      <div class="eyebrow-split"><span>Why Every ActionCOACH Licensee Faces This</span></div>
+      <h2 class="h2">
+        You Have the Methodology. You Have the Brand. You Don't Have Enough <span class="accent-word">Hours</span> in the Day.
+      </h2>
+    </div>
+
+    <div class="body-stack wide">
+      <p>Here's the tension every ActionCOACH licensee faces. You have one of the most recognised coaching frameworks in the world. You have territory rights. You have a proven system for transforming businesses once you're in the room.</p>
+      <p>But none of that matters if you can't consistently get into the room.</p>
+      <p>You can't run a <strong>GrowthCLUB</strong> and follow up on 30 LinkedIn conversations in the same week. You can't deliver a <strong>COD call</strong> and simultaneously be reaching out to the next prospect. You can't maintain a multichannel outreach cadence while coaching 8 to 12 clients. The practice will only grow as fast as you can fill your diary. And right now, you're the one filling it.</p>
+    </div>
+
+    <h3 class="display-strong" style="margin-top: 48px; font-size: 26px;">You've tried to fix this.</h3>
+
+    <div class="body-stack wide">
+      <p>You hired a junior VA to run LinkedIn. They couldn't articulate what ActionCOACH actually does, let alone qualify a business owner for a COD call. The skill sets are worlds apart.</p>
+      <p>You paid a marketing agency that promised "leads" but delivered contact lists with no qualification, no context, and no conversion. You were still chasing every single one yourself.</p>
+      <p>You did it yourself between sessions. Burning hours on outreach that feels productive but generates nothing predictable. 10pm on a Tuesday, writing personalised messages to business owners who never reply.</p>
+    </div>
+
+    <h3 class="display-strong" style="margin-top: 48px; font-size: 24px; max-width: 24ch;">The problem was never effort. It was that your practice was never designed to support what you're trying to build.</h3>
+
+    <div class="body-stack wide" style="margin-top: 24px;">
+      <p>Multichannel prospecting to CEOs and founders requires nurturing automations, CRM infrastructure, email deliverability architecture, LinkedIn tooling, telephony systems, and data enrichment pipelines. Even if you could build all of it, every hour you spend on outreach infrastructure is an hour stolen from the only thing generating revenue: coaching.</p>
+      <p>The irony isn't lost on you. The advice you give your clients every day — delegate, build systems, stop wearing every hat — is the same advice that would fix your own practice. But the economics of a solo ActionCOACH territory make following that advice nearly impossible without the right partner.</p>
+    </div>
+
+    <h3 class="display-strong" style="margin-top: 48px; font-size: 22px; max-width: 34ch;">The licensees building £10,000+ in monthly recurring revenue solved this problem exactly once. They separated the coaching from the client acquisition. They invested in a system that generates qualified COD calls without them.</h3>
+
+    <div style="margin-top: 56px;">
+      <a href="#book" class="btn btn-dark">Show Me How This Works for My Territory →</a>
+      <span class="cta-note on-light">30 Minutes · We'll Map Your Territory · No Pitch</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SECTION 4 — THE WALL / WARM SEAT ============== -->
+<section class="sec-dark sec-pad" aria-label="The Warm Seat Approach">
+  <!-- pattern overlay -->
+  <div class="hero-pattern" aria-hidden="true" style="opacity:0.04;">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="wall-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+          <path d="M 48 0 L 0 0 0 48" fill="none" stroke="white" stroke-width="0.75" />
+        </pattern>
+        <pattern id="wall-dot" width="48" height="48" patternUnits="userSpaceOnUse">
+          <circle cx="0" cy="0" r="1.2" fill="white" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#wall-grid)" />
+      <rect width="100%" height="100%" fill="url(#wall-dot)" />
+    </svg>
+  </div>
+  <div class="hero-left-edge" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="container" style="position:relative; z-index:2;">
+    <div class="section-head">
+      <div class="eyebrow">The Problem Nobody Talks About</div>
+      <h2 class="h2">
+        Even if you fixed the pipeline, you'd still hit the wall: your ideal client doesn't think they need you. The rejection isn't on price. It's on <span class="accent-word">premise</span>.
+      </h2>
+    </div>
+
+    <div class="body-stack wide">
+      <p>CEOs. Founders. Managing directors. People who built something from nothing. The business is their identity. When someone reaches out and says <em>"I'm a business coach, and I'd like to help you grow your business,"</em> the reaction isn't curiosity. It's resistance.</p>
+    </div>
+
+    <blockquote class="pull-quote">
+      "I've been running this company for fifteen years. Why would I need someone to tell me how to do it?"
+    </blockquote>
+
+    <div class="body-stack wide">
+      <p>This is rejection on <em>premise</em>, not on price or timing. Cold outreach that leads with coaching gets filtered before the message is finished.</p>
+    </div>
+
+    <h3 class="display-strong" style="margin-top: 48px; color: #fff; font-size: 24px;">Most agencies don't even know this wall exists. QCP was built around it.</h3>
+
+    <div class="body-stack wide" style="margin-top: 24px;">
+      <p>We call it the <strong>Warm Seat Approach</strong>, and it inverts the entire dynamic. Instead of reaching out to pitch coaching, we position the business owner as the expert. They get featured. They get invited to share what they've built. The defensive wall never goes up.</p>
+      <p>By the time your prospect sits down for the COD call, they've already spent over an hour in genuine conversation about their business, their challenges, where they want to be in twelve months. They weren't pitched. They were featured. The rapport is already there. You're not selling. You're consulting. The COD call feels like a <em>second</em> meeting, not a first.</p>
+      <p>That's what a warm seat feels like. You sit down and the conversation is already halfway there. No cold start. No pitch. Just a prospect who already knows your name, already shared their challenges, and already chose to be in the room.</p>
+    </div>
+
+    <h3 class="display-strong" style="margin-top: 48px; color: #fff; font-size: 24px;">How exactly do we engineer the warm seat? That's what the call is for.</h3>
+
+    <div style="margin-top: 48px;">
+      <a href="#book" class="btn btn-light">Show Me How This Works for My Territory →</a>
+      <span class="cta-note on-dark">30 Minutes · We'll Show You How We Warm the Seat · Before Your Prospect Ever Walks In</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SECTION 5 — QUALIFICATION FRAMEWORK ============== -->
+<section class="sec-white sec-pad" aria-label="Qualification framework">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-split"><span>Every COD Call Is Pre-Qualified</span></div>
+      <h2 class="h2">
+        Every COD Call Is Pre-Qualified. Here's <span class="accent-word">Exactly</span> How.
+      </h2>
+    </div>
+
+    <div class="body-stack wide">
+      <p>This is what separates QCP from every other agency you've spoken to. And it's the single biggest reason our partners' COD calls convert at significantly higher rates than typical outbound meetings.</p>
+      <p>Before any business owner reaches your diary, our team <strong>personally speaks with them.</strong> We don't book calendar slots. We run every conversation through the <strong>Team, Time, and Money</strong> qualification framework:</p>
+    </div>
+
+    <div class="tqual-grid">
+      <div class="tqual-item">
+        <span class="marker" aria-hidden="true" style="color: #0A1620;"><svg><use href="#icon-tick"/></svg></span>
+        <h4>Team.</h4>
+        <p>Does this business have the team size and structure that makes coaching relevant? We confirm they're not a solopreneur with no employees and no capacity to implement what you teach. Only businesses with real teams and real operational challenges make it through.</p>
+      </div>
+      <div class="tqual-item">
+        <span class="marker" aria-hidden="true" style="color: #0A1620;"><svg><use href="#icon-tick"/></svg></span>
+        <h4>Time.</h4>
+        <p>Is this person genuinely available and willing to engage? We confirm real intent, not polite interest. Not "maybe next quarter."</p>
+      </div>
+      <div class="tqual-item">
+        <span class="marker" aria-hidden="true" style="color: #0A1620;"><svg><use href="#icon-tick"/></svg></span>
+        <h4>Money.</h4>
+        <p>Does the business have the estimated turnover and budget to invest in coaching? We verify this directly, so you never sit across from someone who can't afford to say yes.</p>
+      </div>
+    </div>
+
+    <div class="body-stack wide">
+      <p><strong>Then we brief them about you.</strong> Before the COD call, every prospect knows your background, the results you've achieved with other business owners, and exactly what the conversation will cover. They arrive informed, interested, and ready for a real business discussion.</p>
+    </div>
+
+    <blockquote class="pull-quote" style="margin-top:48px;">
+      Every booked COD call is meaningful, warm, and pre-qualified. Not just a name on your calendar.
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============== SECTION 6 — CAMPAIGN STRATEGIES ============== -->
+<section class="sec-gray sec-pad" aria-label="Campaign strategies">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-split"><span>Proven Strategies Built for ActionCOACH</span></div>
+      <h2 class="h2">
+        Proven Campaign Strategies Built for <span class="accent-word">ActionCOACH</span>.
+      </h2>
+      <p class="sub">We don't run generic outreach and hope it sticks. We deploy strategies that are already converting for ActionCOACH partners across the UK.</p>
+    </div>
+
+    <div class="strategy-grid">
+      <article class="strategy-card">
+        <span class="tick" style="color: #0A1620;"><svg><use href="#icon-tick"/></svg></span>
+        <div class="num"><span class="digit">01</span> / Strategy</div>
+        <h3>Case Study Lead Approach</h3>
+        <p>We offer complimentary coaching sessions to business owners when you provide past client success stories. The prospect hears about real results, real businesses, and real outcomes before they ever speak to you. The success story does the selling before the COD call even starts.</p>
+      </article>
+      <article class="strategy-card">
+        <span class="tick" style="color: #0A1620;"><svg><use href="#icon-tick"/></svg></span>
+        <div class="num"><span class="digit">02</span> / Strategy</div>
+        <h3>Santander Offer</h3>
+        <p>Two weeks of complimentary coaching positioned as a low-commitment entry point. Ideal for business owners who are curious about coaching but cautious about committing. It starts the relationship without pressure and gives you the opportunity to demonstrate value before asking for a longer engagement.</p>
+      </article>
+      <article class="strategy-card">
+        <span class="tick" style="color: #0A1620;"><svg><use href="#icon-tick"/></svg></span>
+        <div class="num"><span class="digit">03</span> / Strategy</div>
+        <h3>GrowthCLUB &amp; Event Campaigns</h3>
+        <p>Targeted outreach driving <strong>12 to 15 qualified business owners per event</strong> through pre-event qualification and personalised follow-up. We handle the attendee acquisition, qualification, and pre-event communication. You deliver the event. Multiple pipeline opportunities generated in a single session.</p>
+      </article>
+    </div>
+
+    <div class="emphasis-box" style="margin-top: 48px;">
+      <p><strong style="color: var(--surface-dark);">The result:</strong> consistent COD calls, full event attendance, and predictable new client opportunities from business owners in your territory who have already been qualified and briefed.</p>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <a href="#book" class="btn btn-dark">Show Me How This Works for My Territory →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SECTION 7 — VOLUME / WHAT WE DELIVER ============== -->
+<section class="sec-dark sec-pad" aria-label="COD calls not leads">
+  <div class="hero-pattern" aria-hidden="true" style="opacity:0.04;">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="vol-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+          <path d="M 48 0 L 0 0 0 48" fill="none" stroke="white" stroke-width="0.75" />
+        </pattern>
+        <pattern id="vol-dot" width="48" height="48" patternUnits="userSpaceOnUse">
+          <circle cx="0" cy="0" r="1.2" fill="white" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#vol-grid)" />
+      <rect width="100%" height="100%" fill="url(#vol-dot)" />
+    </svg>
+  </div>
+  <div class="hero-left-edge" aria-hidden="true"></div>
+
+  <div class="container" style="position:relative; z-index:2;">
+    <div class="section-head">
+      <div class="eyebrow">We Deliver COD Calls · Not Leads</div>
+      <h2 class="h2">
+        We Deliver <span class="accent-word">COD</span> Calls. Not Leads.
+      </h2>
+      <p class="sub">We run a <strong style="color:#fff;">16-touchpoint multichannel cadence</strong> across four channels simultaneously.</p>
+    </div>
+
+    <div class="channel-grid">
+      <div class="channel">
+        <div class="dot-label"><span class="sq"></span>LinkedIn</div>
+        <p>400+ connections and personalised messages targeting business owners in your territory.</p>
+      </div>
+      <div class="channel">
+        <div class="dot-label"><span class="sq"></span>Email</div>
+        <p>800+ cold emails written, personalised, and A/B tested across verified prospect lists.</p>
+      </div>
+      <div class="channel">
+        <div class="dot-label"><span class="sq"></span>Phone</div>
+        <p>800+ calls from trained reps using ActionCOACH-proven scripts.</p>
+      </div>
+      <div class="channel">
+        <div class="dot-label"><span class="sq"></span>SMS</div>
+        <p>Strategic follow-ups, event invitations, and time-sensitive communications.</p>
+      </div>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat-item"><span class="n">2,000+</span><span class="label">Touchpoints / mo</span></div>
+      <div class="stat-item"><span class="n">1,000</span><span class="label">Enriched profiles / mo</span></div>
+      <div class="stat-item"><span class="n">400</span><span class="label">Verified phone numbers / mo</span></div>
+      <div class="stat-item"><span class="n">8–15</span><span class="label">Pre-qualified COD calls / mo</span></div>
+    </div>
+
+    <div class="body-stack wide">
+      <p>All coordinated, all managed. You don't touch any of it.</p>
+      <p>Every month: 1,000 enriched prospect profiles with verified emails and 400 verified phone numbers mapped to your territory and ICP. Plus managed CRM, VOIP with local number, call recording, SMS, and weekly analytics across every channel. Ongoing copywriting for all outreach materials. All software included.</p>
+    </div>
+
+    <h3 class="display-strong" style="margin-top: 32px; color: #fff; font-size: 24px;">8 to 15 pre-qualified COD calls in your diary every month.</h3>
+    <div class="body-stack wide" style="margin-top: 16px;">
+      <p>Plus GrowthCLUB attendees. Plus the long-term authority that content, events, and ongoing positioning build in your territory over time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SECTION 8 — THE INVESTMENT ============== -->
+<section class="sec-white sec-pad" aria-label="The investment">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-split"><span>The Investment</span></div>
+      <h2 class="h2">
+        Your ActionCOACH Territory Was Never <span class="accent-word">Designed</span> to Support a Marketing Department.
+      </h2>
+    </div>
+
+    <div class="body-stack wide">
+      <p>That's not a failing. That's the model. The operating model leaves limited margin for dedicated marketing hires. QCP exists because this gap does.</p>
+    </div>
+
+    <div class="price-display">
+      <div class="num">
+        <span class="currency">£</span>2,497<span class="per">per month</span>
+      </div>
+      <div class="plus">+ <span class="rev-accent">10% revenue share</span> on closed clients</div>
+    </div>
+
+    <div class="body-stack wide">
+      <p><strong>That's £83 a day.</strong> Less than a single hour of your unbilled time. Less than the client you didn't sign last month because the COD call never happened.</p>
+      <p><strong>10% revenue share</strong> means we're inside the same economics you are. We earn when you earn. If we don't generate coaching clients for you, we don't earn commission.</p>
+      <p><strong>No long-term contracts.</strong> Rolling agreement. Cancel anytime with 30 days notice. We keep your business because we earn it, not because you're locked in.</p>
+    </div>
+
+    <div class="pricing-boxes">
+      <div class="pricing-box">
+        <h4>Put it this way — ROI math</h4>
+        <p>If one COD call per month converts to a coaching client worth £500 in recurring monthly revenue, the partnership pays for itself within 5 months. Matt Donegan signed 7 clients in a single quarter, generating over £10,000 MRR. That's a <strong>4×+ return.</strong></p>
+      </div>
+      <div class="pricing-box">
+        <h4>All software included</h4>
+        <p>CRM, email marketing, LinkedIn automation, VOIP, call recording, SMS, and data enrichment. No extra subscriptions. This alone saves you <strong>£600 to £1,000+ per month</strong> compared to buying these tools separately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SECTION 9 — TERRITORY SCARCITY ============== -->
+<section class="sec-dark sec-pad" aria-label="Territory exclusivity">
+  <div class="hero-pattern" aria-hidden="true" style="opacity:0.04;">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="terr-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+          <path d="M 48 0 L 0 0 0 48" fill="none" stroke="white" stroke-width="0.75" />
+        </pattern>
+        <pattern id="terr-dot" width="48" height="48" patternUnits="userSpaceOnUse">
+          <circle cx="0" cy="0" r="1.2" fill="white" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#terr-grid)" />
+      <rect width="100%" height="100%" fill="url(#terr-dot)" />
+    </svg>
+  </div>
+  <div class="hero-left-edge" aria-hidden="true"></div>
+
+  <div class="container" style="position:relative; z-index:2;">
+    <div class="section-head">
+      <div class="eyebrow">One Partner Per Territory</div>
+      <h2 class="h2">
+        One ActionCOACH Partner Per Territory. <span class="accent-word">Once</span> It's Taken, It's Closed.
+      </h2>
+    </div>
+
+    <div class="body-stack wide">
+      <p>QCP runs campaigns in your territory, targeting your ideal clients, in your geography. We can't do that for two ActionCOACH licensees in the same area without cannibalising results for both. So we don't.</p>
+    </div>
+
+    <h3 class="display-strong" style="margin-top: 32px; color: #fff; font-size: 24px;">One partner per territory. Once it's taken, it's closed.</h3>
+
+    <div style="margin-top: 48px;">
+      <div class="territory-head">Currently Available</div>
+      <div class="territory-pills">
+        <span class="territory-pill">Greater Manchester</span>
+        <span class="territory-pill">Glasgow</span>
+        <span class="territory-pill">Bristol</span>
+        <span class="territory-pill">Kent</span>
+        <span class="territory-pill">West Midlands</span>
+        <span class="territory-pill">Essex</span>
+        <span class="territory-pill">Devon</span>
+      </div>
+    </div>
+
+    <div class="body-stack wide">
+      <p><strong>This isn't manufactured urgency.</strong> It's a business constraint. We can't run competing campaigns in the same postcode without cannibalising results for both partners. One territory, one partner. That's it.</p>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <a href="#book" class="btn btn-light">Check Your Territory →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SECTION 10 — FIRST 90 DAYS ============== -->
+<section class="sec-white sec-pad" aria-label="First 90 days">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-split"><span>What the First 90 Days Look Like</span></div>
+      <h2 class="h2">
+        Your <span class="accent-word">First</span> 90 Days.
+      </h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-stage">
+        <div class="stage-label"><span class="stage-num">Stage 01</span> · Weeks 1–2</div>
+        <h3>Strategy &amp; Setup</h3>
+        <p>ICP review and go-to-market strategy for your territory. Full campaign copywriting across LinkedIn, Email, Phone, and SMS using ActionCOACH-proven scripts. CRM, VOIP, email, and LinkedIn configuration. 16-touchpoint cadence assembled. First enriched prospect lists for your territory prepared. By end of week 2, your pipeline infrastructure is operational.</p>
+      </div>
+      <div class="timeline-stage">
+        <div class="stage-label"><span class="stage-num">Stage 02</span> · Weeks 3–4</div>
+        <h3>Go Live</h3>
+        <p>All outreach channels activated. Dedicated Slack channel live for daily communication. First responses, conversations, and COD calls booked.</p>
+      </div>
+      <div class="timeline-stage">
+        <div class="stage-label"><span class="stage-num">Stage 03</span> · Months 2–3</div>
+        <h3>Predictable Pipeline</h3>
+        <p>Consistent flow of pre-qualified COD calls and GrowthCLUB attendees. Weekly analytics and biweekly strategy calls in rhythm. ROI visible and measurable. Ongoing optimisation. 8 to 15 pre-qualified COD calls monthly. Content and events building long-term authority in your territory.</p>
+      </div>
+    </div>
+
+    <p class="timeline-closer">
+      <em>Most partners see their first qualified COD call within three weeks. Matt Donegan had seven signed clients by month three.</em>
+    </p>
+  </div>
+</section>
+
+<!-- ============== SECTION 11 — FAQ ============== -->
+<section class="sec-gray sec-pad" aria-label="FAQ">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-split"><span>Questions We Get Asked</span></div>
+      <h2 class="h2">
+        Questions We Get <span class="accent-word">Asked</span>.
+      </h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>How does QCP support GrowthCLUB events?</h3>
+        <p>We run dedicated GrowthCLUB campaigns that drive 12 to 15 qualified business owners to each event through targeted outreach, pre-event qualification, and personalised follow-up. We handle attendee acquisition and communication. You deliver the event. Every attendee has been vetted and briefed before they walk in.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What makes your COD calls different from a typical cold outreach meeting?</h3>
+        <p>The Warm Seat Approach changes how prospects arrive. Instead of cold outreach that triggers resistance, we position the business owner as the expert first. By the time they sit down for the COD call, they've already spent over an hour in genuine conversation about their business. The rapport is already there. The COD call feels like a second meeting, not a first.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if you don't deliver the COD calls you promise?</h3>
+        <p>We're inside the same economics you are. Our 10% revenue share means we only earn when you earn. If we don't generate coaching clients for you, we don't earn commission. No long-term contracts. Rolling agreement. Cancel anytime with 30 days notice.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why is there only one ActionCOACH partner per territory?</h3>
+        <p>We can't run competing campaigns in the same postcode without cannibalising results for both partners. It's a business constraint, not manufactured urgency. One territory, one partner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SECTION 12 — CLOSING ============== -->
+<section class="sec-dark sec-pad" id="book" aria-label="Book discovery call">
+  <div class="hero-pattern" aria-hidden="true" style="opacity:0.04;">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="close-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+          <path d="M 48 0 L 0 0 0 48" fill="none" stroke="white" stroke-width="0.75" />
+        </pattern>
+        <pattern id="close-dot" width="48" height="48" patternUnits="userSpaceOnUse">
+          <circle cx="0" cy="0" r="1.2" fill="white" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#close-grid)" />
+      <rect width="100%" height="100%" fill="url(#close-dot)" />
+    </svg>
+  </div>
+  <div class="hero-left-edge" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="container" style="position:relative; z-index:2;">
+    <div class="section-head">
+      <div class="eyebrow">The Next Step</div>
+      <h2 class="h2" style="max-width: 14ch;">
+        Book Your <span class="accent-word">Discovery</span> Call.
+      </h2>
+    </div>
+
+    <div class="body-stack wide">
+      <p>If you're an ActionCOACH licensee serious about scaling your practice, the next step is a 30-minute discovery call where we'll review your territory, map your ICP, and show you exactly how the Growth Partnership works.</p>
+      <p style="margin-top:24px;"><em style="color: rgba(255,255,255,0.8); font-size: 18px;">We onboard 4 to 8 new partners per quarter. Territory exclusivity limits total capacity.</em></p>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <a href="https://calendar.qcpmarketing.com/widget/booking/iqa3QV6ghN71OR3QfTMb" class="btn btn-light btn-lg" target="_blank" rel="noopener">Book Your Discovery Call Now →</a>
+      <span class="cta-note on-dark" style="max-width: 640px;">£2,497/mo · No Contracts · ROI in Under 90 Days · Your Information Is Kept Strictly Confidential</span>
+    </div>
+
+    <!-- Section 13 — P.S. -->
+    <aside class="ps-card" aria-label="Postscript">
+      <span class="ps-label">P.S.</span>
+      <p>Every month you wait is another month of pre-qualified COD calls going to whoever claims your territory first. Matt Donegan signed 7 clients in a single quarter. Nick Gowens signed a new client within his first few calls. Sanjiv Dodia saw ROI in under 90 days. The system works. The only question is whether your region is still available.
+      &nbsp;<a href="https://calendar.qcpmarketing.com/widget/booking/iqa3QV6ghN71OR3QfTMb" class="inline-link" target="_blank" rel="noopener">Check now. →</a></p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer aria-label="Footer">
+  <div class="footer-seam" aria-hidden="true"></div>
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="fb-logo">
+          <img src="assets/qcp-logo-horizontal.svg" alt="QCP" style="height:22px; filter: brightness(0) invert(1); opacity: 0.6;" />
+        </span>
+        <div class="fb-contact">
+          <a href="mailto:contact@qcpmarketing.com">contact@qcpmarketing.com</a>
+          <a href="tel:+441438000000">+44 1438 000 000</a>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <h5>Partnership</h5>
+        <div class="single-pair">ActionCOACH Licensees</div>
+      </div>
+
+      <address class="footer-addr">
+        Arlington Business Park, Whittle Way<br/>
+        Stevenage, Hertfordshire, SG1 2FP
+      </address>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="copy">© 2026 QCP Marketing Limited. All rights reserved.</span>
+      <a href="https://calendar.qcpmarketing.com/widget/booking/iqa3QV6ghN71OR3QfTMb" class="book-link" target="_blank" rel="noopener">Book a Discovery Call →</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
