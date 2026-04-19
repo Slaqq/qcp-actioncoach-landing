@@ -283,22 +283,22 @@
   @media (min-width: 1024px) {
     .hero { padding: 200px 0 160px; }
   }
-  /* Left edge accent rule — 1px vertical gradient (yellow) */
+  /* Left edge accent rule — 1px vertical gradient (neutral white) */
   .hero-left-edge {
     position: absolute;
     left: 0; top: 0; bottom: 0;
     width: 1px;
     background: linear-gradient(to bottom,
       transparent 0%,
-      rgba(255, 237, 52, 0.6) 50%,
+      rgba(255, 255, 255, 0.18) 50%,
       transparent 100%);
     pointer-events: none;
   }
-  /* Atmospheric depth gradient — radial ellipse lower-left */
+  /* Atmospheric depth gradient — subtle cool wash, no brand tint */
   .hero-glow {
     position: absolute; inset: 0;
     background: radial-gradient(ellipse 55% 70% at 5% 60%,
-      rgba(255, 237, 52, 0.08),
+      rgba(255, 255, 255, 0.04),
       transparent);
     pointer-events: none;
   }
@@ -321,14 +321,14 @@
     opacity: 0.95;
   }
   .co-brand .qcp-mark {
-    height: 20px;
+    height: 44px;
     color: rgba(255,255,255,0.6);
     display: inline-flex;
     align-items: center;
   }
   .co-brand .qcp-mark svg { height: 100%; width: auto; }
   .co-brand .divider {
-    width: 1px; height: 24px;
+    width: 1px; height: 40px;
     background: rgba(255,255,255,0.2);
   }
   .co-brand .ac-wordmark {
@@ -1006,7 +1006,7 @@
     height: 12rem;
     pointer-events: none;
     background: radial-gradient(ellipse 28% 70% at 50% 100%,
-      rgba(255,237,52,0.16), transparent);
+      rgba(255,255,255,0.05), transparent);
   }
 
   /* Plain display text helper (strong display-font call-outs in body) */
@@ -1063,6 +1063,9 @@
 
     /* Co-brand strip wraps cleanly, locks ActionCOACH logo to manageable size */
     .co-brand { gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+    .co-brand .qcp-mark { height: 32px; }
+    .co-brand .qcp-mark img { height: 32px !important; }
+    .co-brand .divider { height: 28px; }
     .co-brand .ac-logo-wrap img { height: 36px !important; }
 
     /* --- Eyebrow: tighter line + spacing --- */
@@ -1358,7 +1361,7 @@
 
       <div class="co-brand">
         <span class="qcp-mark">
-          <img src="assets/qcp-logo-horizontal.svg" alt="QCP" style="height:20px; filter: brightness(0) invert(1); opacity:0.6;" />
+          <img src="assets/qcp-logo-primary.svg" alt="QCP" style="height:44px; width:auto; filter: brightness(0) invert(1); opacity:0.6;" />
         </span>
         <span class="divider"></span>
         <span class="ac-logo-wrap" style="display:inline-flex; align-items:center; gap:14px;">
