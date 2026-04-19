@@ -2,7 +2,8 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A1620" />
 <title>Qualified Coaching Pipeline — For ActionCOACH Licensees</title>
 <link rel="icon" type="image/svg+xml" href="assets/qcp-logo-icon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +41,7 @@
 
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  html { background: var(--surface-dark); }
   body {
     margin: 0;
     font-family: var(--font-sans);
@@ -1189,7 +1191,8 @@
     .qmark-watermark svg { height: 360px; width: 360px; }
 
     /* --- Footer: clean stacked layout, tappable text --- */
-    .footer-inner { padding: 36px 0 24px; }
+    footer .container { padding: 0 28px; }
+    .footer-inner { padding: 36px 0 calc(24px + env(safe-area-inset-bottom)); }
     .footer-top {
       flex-direction: column;
       gap: 28px;
